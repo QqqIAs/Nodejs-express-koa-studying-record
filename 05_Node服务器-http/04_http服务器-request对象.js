@@ -2,15 +2,19 @@ const http = require('http')
 
 // 1.创建server服务器
 const server = http.createServer((req, res) => {
-  // request对象中包含哪些信息?
-  // 1.url信息
-  console.log(req.url)
-  // 2.method信息(请求方式)
-  console.log(req.method)
-  // 3.headers信息(请求信息)
-  console.log(req.headers)
+  // // request对象中包含哪些信息?
+  // // 1.url信息
+  // console.log(req.url)
+  // // 2.method信息(请求方式)
+  // console.log(req.method)
+  // // 3.headers信息(请求信息)
+  // console.log(req.headers)
+  req.setEncoding('utf-8')
+  req.on('data', (data) => {
+    console.log(data)
+  })
 
-  res.end('hello world aaaa')
+  res.end('请求成功')
 })
 
 

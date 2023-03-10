@@ -9,6 +9,9 @@ const server = http.createServer((req, res) => {
   // 1.1.解析url
   const urlString = req.url
   const urlInfo = url.parse(urlString)
+  console.log(urlInfo.path)
+  console.log('-------')
+  console.log(urlInfo.query)
 
   // 1.2.解析query: offset=100&size=20
   const queryString = urlInfo.query

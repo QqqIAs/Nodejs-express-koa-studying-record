@@ -17,8 +17,8 @@ const server = http.createServer((req, res) => {
   });
 
   req.on("end", () => {
-    // console.log("数据传输完成~");
-    // writeStream.close()
+    console.log("数据传输完成~");
+    writeStream.close()
     res.end("文件上传成功~");
   });
 });
